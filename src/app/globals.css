@@ -65,13 +65,13 @@ textarea:focus {
 }
 
 .handwritten {
-  font-family: var(--font-caveat);
+  font-family: var(--font-caveat), cursive;
 }
 
 .postcard {
   background: var(--paper);
-  border-radius: 24px;
   border: 1px solid #ece3d8;
+  border-radius: 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
@@ -92,7 +92,6 @@ textarea:focus {
   text-decoration: none;
 
   box-shadow: 0 6px 16px rgba(107, 80, 50, 0.25);
-
   transition: all 0.2s ease;
 }
 
@@ -104,13 +103,12 @@ textarea:focus {
 .paper-card {
   background: var(--paper);
   border: 1px solid #ece3d8;
-  border-radius: 36px;
+  border-radius: 0;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
   transition: all 0.2s ease;
-  overflow: hidden;
 }
 
 .paper-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
 }

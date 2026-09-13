@@ -42,7 +42,9 @@ export default function CreatePage() {
 
         <div className="py-16">
           <div className="mb-12 text-center">
-            <h1 className="text-5xl">Create Your Postcard</h1>
+            <h1 className="handwritten text-6xl">
+              Create Your Postcard
+            </h1>
 
             <p className="mt-4 text-stone-600">
               Write a letter from your future perfect day and build its recipe.
@@ -56,8 +58,8 @@ export default function CreatePage() {
           )}
 
           <div className="grid gap-8 lg:grid-cols-2">
-            <div className="rounded-2xl border p-6">
-              <h2 className="mb-6 text-2xl">Letter Details</h2>
+            <div className="paper-card p-6">
+              <h2 className="handwritten mb-6 text-2xl">Letter Details</h2>
 
               <div className="space-y-4">
                 <input
@@ -69,8 +71,7 @@ export default function CreatePage() {
                 />
 
                 <input
-                  type="text"
-                  placeholder="Date"
+                  type="date"
                   value={date}
                   onChange={(e) => setDate(e.target.value)}
                   className="w-full rounded-xl border p-4"
@@ -92,7 +93,7 @@ export default function CreatePage() {
                 <button
                   type="button"
                   onClick={handleSave}
-                  className="w-full rounded-xl border p-4"
+                  className="w-full vintage-button"
                 >
                   Seal Postcard
                 </button>

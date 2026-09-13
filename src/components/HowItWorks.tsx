@@ -1,13 +1,13 @@
 export default function HowItWorks() {
   return (
     <section className="py-24">
-      <h2 className="mb-12 text-center text-4xl font-bold">
+      <h2 className="handwritten mb-12 text-center text-4xl font-bold">
         How It Works
       </h2>
 
       <div className="grid gap-8 md:grid-cols-3">
-        <div className="rounded-3xl bg-white p-8 shadow-sm">
-          <h3 className="mb-3 text-xl font-semibold">
+        <div className="bg-white p-8 shadow-sm">
+          <h3 className="handwritten mb-3 text-xl font-semibold">
             01. Imagine
           </h3>
 
@@ -18,8 +18,8 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        <div className="rounded-3xl bg-white p-8 shadow-sm">
-          <h3 className="mb-3 text-xl font-semibold">
+        <div className="bg-white p-8 shadow-sm">
+          <h3 className="handwritten mb-3 text-xl font-semibold">
             02. Write
           </h3>
 
@@ -29,8 +29,8 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        <div className="rounded-3xl bg-white p-8 shadow-sm">
-          <h3 className="mb-3 text-xl font-semibold">
+        <div className="bg-white p-8 shadow-sm">
+          <h3 className="handwritten mb-3 text-xl font-semibold">
             03. Create a Recipe
           </h3>
 

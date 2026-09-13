@@ -32,7 +32,7 @@ export default function RecipeBuilder({
 
   return (
     <div>
-      <h2 className="mb-4 text-2xl font-semibold">
+      <h2 className="handwritten mb-4 text-2xl font-semibold">
         Recipe Ingredients
       </h2>
 

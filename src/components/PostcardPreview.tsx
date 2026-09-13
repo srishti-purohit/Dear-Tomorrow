@@ -30,7 +30,7 @@ export default function PostcardPreview({
       </div>
 
       <div className="border-t border-stone-200 pt-6">
-        <h3 className="mb-4 text-lg font-semibold">
+        <h3 className="handwritten mb-4 text-lg font-semibold">
           Recipe for a Perfect Day
         </h3>
 

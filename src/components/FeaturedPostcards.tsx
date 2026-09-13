@@ -1,13 +1,13 @@
 export default function FeaturedPostcards() {
     return (
         <section className="py-24">
-            <h2 className="mb-12 text-center text-4xl font-bold">
+            <h2 className="handwritten mb-12 text-center text-4xl font-bold">
                 Featured Perfect Days
             </h2>
 
             <div className="grid gap-8 md:grid-cols-3">
-                <div className="rounded-3xl bg-white p-8 shadow-sm">
-                    <h3 className="mb-4 text-2xl font-semibold">
+                <div className="bg-white p-8 shadow-sm">
+                    <h3 className="handwritten mb-4 text-2xl font-semibold">
                         Rainy Bookstore
                     </h3>
 
@@ -23,8 +23,8 @@ export default function FeaturedPostcards() {
                     </div>
                 </div>
 
-                <div className="rounded-3xl bg-white p-8 shadow-sm">
-                    <h3 className="mb-4 text-2xl font-semibold">
+                <div className="bg-white p-8 shadow-sm">
+                    <h3 className="handwritten mb-4 text-2xl font-semibold">
                         Grandma's Kitchen
                     </h3>
                     
@@ -41,8 +41,8 @@ export default function FeaturedPostcards() {
                     </div>
                 </div>
 
-                <div className="rounded-3xl bg-white p-8 shadow-sm">
-                    <h3 className="mb-4 text-2xl font-semibold">
+                <div className="bg-white p-8 shadow-sm">
+                    <h3 className="handwritten mb-4 text-2xl font-semibold">
                         Dream Job Day
                     </h3>
 

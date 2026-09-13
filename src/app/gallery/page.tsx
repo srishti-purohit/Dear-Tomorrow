@@ -18,7 +18,9 @@ export default function GalleryPage() {
         <Navbar />
 
         <div className="py-16">
-          <h1 className="mb-12 text-5xl">Gallery</h1>
+          <h1 className="handwritten mb-12 text-6xl">
+            Gallery
+          </h1>
 
           {postcards.length === 0 ? (
             <div className="paper-card p-8 text-center">
@@ -31,7 +33,9 @@ export default function GalleryPage() {
                   key={postcard.id}
                   className="paper-card p-6"
                 >
-                  <h2 className="text-2xl">{postcard.title}</h2>
+                  <h2 className="handwritten text-4xl">
+                    {postcard.title}
+                  </h2>
 
                   <p className="mt-2 text-sm text-stone-500">
                     {postcard.date}
@@ -42,7 +46,7 @@ export default function GalleryPage() {
                   </p>
 
                   <div className="mt-8">
-                    <h3 className="text-lg">Recipe</h3>
+                    <h3 className="handwritten text-lg">Recipe</h3>
 
                     <ul className="mt-3 space-y-2">
                       {postcard.ingredients.map((ingredient, index) => (
