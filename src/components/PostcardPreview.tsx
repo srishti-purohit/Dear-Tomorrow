@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface PostcardPreviewProps {
   title: string;
   date: string;
@@ -12,7 +14,23 @@ export default function PostcardPreview({
   ingredients,
 }: PostcardPreviewProps) {
   return (
-    <div className="paper-card p-8">
+    <div className="paper-card relative p-8">
+      <Image
+        src="/images/washi-tape.png"
+        alt=""
+        width={130}
+        height={45}
+        className="absolute -top-5 left-1/2 -translate-x-1/2 -rotate-2 opacity-90"
+      />
+
+      <Image
+        src="/images/stamp.png"
+        alt=""
+        width={90}
+        height={90}
+        className="absolute -right-2 -top-2 rotate-6 opacity-90"
+      />
+
       <p className="mb-2 text-sm uppercase tracking-[0.2em] text-stone-500">
         Dear Tomorrow
       </p>

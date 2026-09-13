@@ -1,8 +1,20 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="flex min-h-[80vh] flex-col items-center justify-center text-center">
+    <section className="relative flex min-h-[80vh] flex-col items-center justify-center overflow-hidden text-center">
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/images/paper%20bg.png"
+          alt=""
+          fill
+          priority
+          className="object-cover opacity-[0.18]"
+        />
+        <div className="absolute inset-0 bg-[var(--background)]/60" />
+      </div>
+
       <p className="handwritten mb-4 text-3xl text-stone-600">
         Dear Tomorrow
       </p>
