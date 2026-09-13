@@ -37,72 +37,75 @@ export default function CreatePage() {
 
   return (
     <main>
-      <Navbar />
+      <div className="mx-auto max-w-6xl px-6">
+        <Navbar />
 
-      <div className="mx-auto max-w-6xl px-6 py-16">
-        <div className="mb-12 text-center">
-          <h1 className="text-5xl">Create Your Postcard</h1>
-          <p className="mt-4 text-stone-600">
-            Write a letter from your future perfect day and build its recipe.
-          </p>
-        </div>
+        <div className="py-16">
+          <div className="mb-12 text-center">
+            <h1 className="text-5xl">Create Your Postcard</h1>
 
-        {saved && (
-          <div className="mb-8 rounded-xl border p-4 text-center">
-            Postcard sealed successfully.
+            <p className="mt-4 text-stone-600">
+              Write a letter from your future perfect day and build its recipe.
+            </p>
           </div>
-        )}
 
-        <div className="grid gap-8 lg:grid-cols-2">
-          <div className="rounded-2xl border p-6">
-            <h2 className="mb-6 text-2xl">Letter Details</h2>
-
-            <div className="space-y-4">
-              <input
-                type="text"
-                placeholder="Postcard title"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                className="w-full rounded-xl border p-4"
-              />
-
-              <input
-                type="text"
-                placeholder="Date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-                className="w-full rounded-xl border p-4"
-              />
-
-              <textarea
-                placeholder="Write your letter..."
-                value={letter}
-                onChange={(e) => setLetter(e.target.value)}
-                rows={8}
-                className="w-full rounded-xl border p-4"
-              />
-
-              <RecipeBuilder
-                ingredients={ingredients}
-                setIngredients={setIngredients}
-              />
-
-              <button
-                type="button"
-                onClick={handleSave}
-                className="w-full rounded-xl border p-4"
-              >
-                Seal Postcard
-              </button>
+          {saved && (
+            <div className="mb-8 rounded-xl border p-4 text-center">
+              Postcard sealed successfully.
             </div>
-          </div>
+          )}
 
-          <PostcardPreview
-            title={title}
-            date={date}
-            letter={letter}
-            ingredients={ingredients}
-          />
+          <div className="grid gap-8 lg:grid-cols-2">
+            <div className="rounded-2xl border p-6">
+              <h2 className="mb-6 text-2xl">Letter Details</h2>
+
+              <div className="space-y-4">
+                <input
+                  type="text"
+                  placeholder="Postcard title"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  className="w-full rounded-xl border p-4"
+                />
+
+                <input
+                  type="text"
+                  placeholder="Date"
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
+                  className="w-full rounded-xl border p-4"
+                />
+
+                <textarea
+                  placeholder="Write your letter..."
+                  value={letter}
+                  onChange={(e) => setLetter(e.target.value)}
+                  rows={8}
+                  className="w-full rounded-xl border p-4"
+                />
+
+                <RecipeBuilder
+                  ingredients={ingredients}
+                  setIngredients={setIngredients}
+                />
+
+                <button
+                  type="button"
+                  onClick={handleSave}
+                  className="w-full rounded-xl border p-4"
+                >
+                  Seal Postcard
+                </button>
+              </div>
+            </div>
+
+            <PostcardPreview
+              title={title}
+              date={date}
+              letter={letter}
+              ingredients={ingredients}
+            />
+          </div>
         </div>
       </div>
 

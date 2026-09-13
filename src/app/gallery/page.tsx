@@ -14,43 +14,47 @@ export default function GalleryPage() {
 
   return (
     <main>
-      <Navbar />
+      <div className="mx-auto max-w-6xl px-6">
+        <Navbar />
 
-      <div className="mx-auto max-w-6xl px-6 py-16">
-        <h1 className="mb-12 text-5xl">Gallery</h1>
+        <div className="py-16">
+          <h1 className="mb-12 text-5xl">Gallery</h1>
 
-        {postcards.length === 0 ? (
-          <p className="text-stone-600">No postcards yet.</p>
-        ) : (
-          <div className="grid gap-8 md:grid-cols-2">
-            {postcards.map((postcard) => (
-              <article
-                key={postcard.id}
-                className="rounded-2xl border p-6"
-              >
-                <h2 className="text-2xl">{postcard.title}</h2>
+          {postcards.length === 0 ? (
+            <div className="paper-card p-8 text-center">
+              <p className="text-stone-600">No postcards yet.</p>
+            </div>
+          ) : (
+            <div className="grid gap-8 md:grid-cols-2">
+              {postcards.map((postcard) => (
+                <article
+                  key={postcard.id}
+                  className="paper-card p-6"
+                >
+                  <h2 className="text-2xl">{postcard.title}</h2>
 
-                <p className="mt-2 text-sm text-stone-500">
-                  {postcard.date}
-                </p>
+                  <p className="mt-2 text-sm text-stone-500">
+                    {postcard.date}
+                  </p>
 
-                <p className="mt-6 whitespace-pre-wrap">
-                  {postcard.letter}
-                </p>
+                  <p className="mt-6 whitespace-pre-wrap">
+                    {postcard.letter}
+                  </p>
 
-                <div className="mt-8">
-                  <h3 className="text-lg">Recipe</h3>
+                  <div className="mt-8">
+                    <h3 className="text-lg">Recipe</h3>
 
-                  <ul className="mt-3 space-y-2">
-                    {postcard.ingredients.map((ingredient, index) => (
-                      <li key={index}>• {ingredient}</li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
-            ))}
-          </div>
-        )}
+                    <ul className="mt-3 space-y-2">
+                      {postcard.ingredients.map((ingredient, index) => (
+                        <li key={index}>• {ingredient}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       <Footer />
