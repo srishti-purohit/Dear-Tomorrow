@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getPostcards, Postcard } from "@/lib/storage";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { getPostcards, Postcard } from "@/lib/storage";
 
 export default function GalleryPage() {
   const [postcards, setPostcards] = useState<Postcard[]>([]);
@@ -12,55 +13,47 @@ export default function GalleryPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#F8F2E8] px-6 py-12 text-stone-800">
-      <div className="mx-auto max-w-6xl">
-        <Navbar />
+    <main>
+      <Navbar />
 
-        <h1 className="handwritten mb-10 text-center text-6xl">
-          Gallery
-        </h1>
+      <div className="mx-auto max-w-6xl px-6 py-16">
+        <h1 className="mb-12 text-5xl">Gallery</h1>
 
         {postcards.length === 0 ? (
-          <div className="rounded-3xl bg-white p-8 text-center shadow-sm">
-            <p>No postcards yet.</p>
-          </div>
+          <p className="text-stone-600">No postcards yet.</p>
         ) : (
-          <div className="grid items-start gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2">
             {postcards.map((postcard) => (
-              <div
+              <article
                 key={postcard.id}
-                className="rounded-3xl bg-white p-6 shadow-sm"
+                className="rounded-2xl border p-6"
               >
-                <h2 className="mb-2 text-2xl font-semibold">
-                  {postcard.title}
-                </h2>
+                <h2 className="text-2xl">{postcard.title}</h2>
 
-                <p className="mb-4 text-sm text-stone-500">
+                <p className="mt-2 text-sm text-stone-500">
                   {postcard.date}
                 </p>
 
-                <p className="mb-6 line-clamp-4 text-stone-600">
+                <p className="mt-6 whitespace-pre-wrap">
                   {postcard.letter}
                 </p>
 
-                <div>
-                  <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide">
-                    Recipe
-                  </h3>
+                <div className="mt-8">
+                  <h3 className="text-lg">Recipe</h3>
 
-                  <ul className="space-y-1 text-sm">
-                    {postcard.ingredients.map((ingredient) => (
-                      <li key={ingredient}>
-                        • {ingredient}
-                      </li>
+                  <ul className="mt-3 space-y-2">
+                    {postcard.ingredients.map((ingredient, index) => (
+                      <li key={index}>• {ingredient}</li>
                     ))}
                   </ul>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         )}
       </div>
+
+      <Footer />
     </main>
   );
 }

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import RecipeBuilder from "@/components/RecipeBuilder";
 import PostcardPreview from "@/components/PostcardPreview";
+import Footer from "@/components/Footer";
 import { savePostcard } from "@/lib/storage";
 
 export default function CreatePage() {
@@ -35,66 +36,61 @@ export default function CreatePage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#F8F2E8] px-6 py-12 text-stone-800">
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
-          <Navbar />
+    <main>
+      <Navbar />
+
+      <div className="mx-auto max-w-6xl px-6 py-16">
+        <div className="mb-12 text-center">
+          <h1 className="text-5xl">Create Your Postcard</h1>
+          <p className="mt-4 text-stone-600">
+            Write a letter from your future perfect day and build its recipe.
+          </p>
         </div>
 
-        <h1 className="handwritten mb-2 text-6xl">
-          Create Your Postcard
-        </h1>
-
-        <p className="mb-10 text-stone-600">
-          Write a letter from your future perfect day and build its recipe.
-        </p>
-
         {saved && (
-          <div className="mb-4 rounded-xl bg-green-100 p-4 text-green-800">
+          <div className="mb-8 rounded-xl border p-4 text-center">
             Postcard sealed successfully.
           </div>
         )}
 
-        <div className="grid gap-10 lg:grid-cols-2">
-          <div className="paper-card p-8">
-            <h2 className="mb-6 text-2xl font-semibold">
-              Letter Details
-            </h2>
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="rounded-2xl border p-6">
+            <h2 className="mb-6 text-2xl">Letter Details</h2>
 
             <div className="space-y-4">
               <input
                 type="text"
-                placeholder="Postcard Title"
+                placeholder="Postcard title"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 className="w-full rounded-xl border p-4"
               />
 
               <input
-                type="date"
+                type="text"
+                placeholder="Date"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
                 className="w-full rounded-xl border p-4"
               />
 
               <textarea
-                rows={8}
-                placeholder="Dear Yesterday..."
+                placeholder="Write your letter..."
                 value={letter}
                 onChange={(e) => setLetter(e.target.value)}
+                rows={8}
                 className="w-full rounded-xl border p-4"
               />
 
-              <div className="pt-4">
-                <RecipeBuilder
-                  ingredients={ingredients}
-                  setIngredients={setIngredients}
-                />
-              </div>
+              <RecipeBuilder
+                ingredients={ingredients}
+                setIngredients={setIngredients}
+              />
 
               <button
+                type="button"
                 onClick={handleSave}
-                className="mt-4 vintage-button"
+                className="w-full rounded-xl border p-4"
               >
                 Seal Postcard
               </button>
@@ -109,6 +105,8 @@ export default function CreatePage() {
           />
         </div>
       </div>
+
+      <Footer />
     </main>
   );
 }
